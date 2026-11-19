@@ -1,0 +1,416 @@
+@import "tailwindcss";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: light;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, "Segoe UI", "Helvetica Neue", sans-serif;
+    background: #f4f6f2;
+    color: #233b3d;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.app-shell {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 86% 6%, rgba(213, 230, 219, 0.44), transparent 34rem),
+        #f4f6f2;
+    color: #233b3d;
+}
+
+.app-sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    display: flex;
+    flex: 0 0 16rem;
+    flex-direction: column;
+    width: 16rem;
+    height: 100vh;
+    padding: 1.75rem 1.25rem;
+    border-color: rgba(235, 246, 239, 0.1);
+    background: linear-gradient(165deg, #193c3d 0%, #163638 52%, #142f35 100%);
+    box-shadow: 12px 0 36px rgba(27, 55, 49, 0.08);
+}
+
+.sidebar-brand {
+    padding: 0.35rem 0.6rem 0.6rem;
+}
+
+.sidebar-brand h1 {
+    margin: 0;
+    color: #f3f7ef;
+    font-size: 1.45rem;
+    font-weight: 750;
+    letter-spacing: -0.045em;
+}
+
+.sidebar-brand p {
+    color: #a9c2b9;
+    font-size: 0.76rem;
+    letter-spacing: 0.015em;
+}
+
+.app-sidebar .text-white {
+    color: #f3f7ef;
+}
+
+.app-sidebar .text-slate-500,
+.app-sidebar .text-slate-600 {
+    color: #9ab2a9;
+}
+
+.sidebar-nav {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.sidebar-nav > * {
+    margin-top: 0 !important;
+}
+
+.app-sidebar .nav-item {
+    min-height: 2.9rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid transparent;
+    border-radius: 0.85rem;
+    background: transparent;
+    color: #bbd0c8;
+    font-weight: 500;
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.app-sidebar .nav-item:hover {
+    transform: translateX(2px);
+    background: rgba(236, 248, 241, 0.09);
+    color: #fff;
+}
+
+.app-sidebar .nav-item.bg-blue-600 {
+    border-color: rgba(180, 226, 207, 0.16);
+    background: #2f746a;
+    color: #fff;
+    box-shadow: 0 7px 18px rgba(9, 24, 26, 0.15);
+}
+
+.app-sidebar .nav-item.bg-blue-600:hover {
+    background: #398176;
+}
+
+.sidebar-footer {
+    margin-top: auto !important;
+    border-color: rgba(235, 246, 239, 0.14);
+    padding: 1.25rem 0.6rem 0.25rem;
+    line-height: 1.55;
+}
+
+.app-main {
+    min-width: 0;
+    color: #253b3c;
+}
+
+.app-main .grid,
+.app-main .grid > * {
+    min-width: 0;
+}
+
+.app-main .truncate {
+    min-width: 0;
+}
+
+.app-main > .page-container {
+    width: min(100%, 1680px);
+    margin-inline: auto;
+    padding: clamp(1.25rem, 3.1vw, 2.75rem);
+}
+
+.app-main h1,
+.app-main h2 {
+    color: #1d3839;
+    letter-spacing: -0.035em;
+}
+
+.app-main h1 {
+    font-size: clamp(1.8rem, 2.3vw, 2.25rem);
+    line-height: 1.15;
+}
+
+.app-main h2 {
+    line-height: 1.3;
+}
+
+.app-main .text-white {
+    color: #233b3d;
+}
+
+.app-main .text-slate-200 {
+    color: #344e4c;
+}
+
+.app-main .text-slate-300 {
+    color: #49615d;
+}
+
+.app-main .text-slate-400 {
+    color: #687d77;
+}
+
+.app-main .text-slate-500,
+.app-main .text-slate-600 {
+    color: #81918a;
+}
+
+.app-main .text-blue-400,
+.app-main .text-blue-200 {
+    color: #287269;
+}
+
+.app-main .text-cyan-300 {
+    color: #28796e;
+}
+
+.app-main .text-emerald-400 {
+    color: #34775b;
+}
+
+.app-main .text-amber-200,
+.app-main .text-amber-300 {
+    color: #8d6327;
+}
+
+.app-main .text-red-300 {
+    color: #a33e36;
+}
+
+.app-main .bg-slate-900 {
+    border-color: #e2e9e3;
+    background-color: #fff;
+    box-shadow: 0 10px 28px rgba(40, 67, 55, 0.055);
+}
+
+.app-main .bg-slate-800 {
+    background-color: #f1f5f1;
+}
+
+.app-main .bg-slate-700 {
+    background-color: #dce5df;
+}
+
+.app-main .bg-slate-500 {
+    background-color: #82948c;
+}
+
+.app-main .bg-blue-500 {
+    background-color: #4a8f84;
+}
+
+.app-main .bg-cyan-400 {
+    background-color: #3a998c;
+}
+
+.app-main .bg-blue-400 {
+    background-color: #458e82;
+}
+
+.app-main .bg-blue-600 {
+    background-color: #2e746a;
+    color: #fff;
+}
+
+.app-main .bg-blue-950\/60 {
+    background-color: #e8f2ed;
+}
+
+.app-main .bg-amber-950\/30 {
+    background-color: #fff7e6;
+}
+
+.app-main .bg-red-950\/40 {
+    background-color: #fff0ed;
+}
+
+.app-main .border-slate-800,
+.app-main .border-slate-700 {
+    border-color: #e0e8e2;
+}
+
+.app-main .border-amber-900\/70 {
+    border-color: #ecd9b2;
+}
+
+.app-main .border-red-800 {
+    border-color: #f1d0c9;
+}
+
+.app-main section,
+.app-main article,
+.app-main form {
+    transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.app-main section:hover,
+.app-main article:hover {
+    box-shadow: 0 15px 34px rgba(40, 67, 55, 0.09);
+}
+
+.app-main input,
+.app-main select {
+    min-height: 2.9rem;
+    border-radius: 0.8rem;
+    border-color: #d7e1da;
+    background-color: #fbfcfa;
+    color: #233b3d;
+    transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+.app-main input:hover,
+.app-main select:hover {
+    border-color: #b6ccc0;
+}
+
+.app-main input:focus,
+.app-main select:focus {
+    border-color: #4d9181;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(77, 145, 129, 0.16);
+}
+
+.app-main button {
+    border-radius: 0.85rem;
+    transition: background-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.app-main button.bg-blue-600:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background-color: #28655d;
+    box-shadow: 0 8px 18px rgba(39, 101, 90, 0.2);
+}
+
+.app-main button:disabled {
+    cursor: wait;
+    background-color: #dce5df;
+    color: #77877f;
+}
+
+.app-main button:focus-visible,
+.app-sidebar button:focus-visible,
+.app-main summary:focus-visible {
+    outline: 3px solid rgba(81, 151, 129, 0.55);
+    outline-offset: 3px;
+}
+
+.app-main table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.app-main thead {
+    background: #f5f8f5;
+}
+
+.app-main th {
+    color: #687d77;
+    font-weight: 650;
+}
+
+.app-main tbody tr {
+    transition: background-color 140ms ease;
+}
+
+.app-main tbody tr:hover {
+    background-color: #f7faf7;
+}
+
+.app-main svg line {
+    stroke: #e0e8e2;
+}
+
+.app-main svg text {
+    fill: #71847c;
+}
+
+@media (max-width: 760px) {
+    .app-shell {
+        flex-direction: column;
+    }
+
+    .app-sidebar {
+        position: relative;
+        z-index: 1;
+        flex: none;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 1rem 1.1rem 0.85rem;
+        box-shadow: 0 10px 24px rgba(27, 55, 49, 0.1);
+    }
+
+    .sidebar-brand {
+        margin-bottom: 0.8rem;
+        padding: 0.15rem 0.3rem;
+    }
+
+    .sidebar-brand h1 {
+        font-size: 1.25rem;
+    }
+
+    .sidebar-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 0;
+        overflow: visible;
+        padding: 0.15rem 0 0.35rem;
+    }
+
+    .app-sidebar .nav-item {
+        min-width: 0;
+        min-height: 3rem;
+        width: 100%;
+        padding: 0.55rem 0.75rem;
+        white-space: normal;
+    }
+
+    .sidebar-footer {
+        margin-top: 0.35rem !important;
+        padding: 0.55rem 0.3rem 0.1rem;
+    }
+
+    .app-sidebar .sidebar-footer p {
+        display: block;
+        margin-right: 0;
+        font-size: 0.68rem;
+    }
+
+    .app-main > .page-container {
+        padding: 1.25rem 1rem;
+    }
+
+    .app-main h1 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
